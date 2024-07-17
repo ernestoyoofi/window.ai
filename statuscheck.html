@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window.ai - Check Supported</title>
+    <link href="./assets/globals.css" rel="stylesheet" /> 
+    <link href="./assets/styles.css" rel="stylesheet" /> 
+  </head>
+  <body target-script="checked">
+    <div class="pagestatus">
+      <div class="pagesupported">
+        <div class="listcontent" type-content="checkwindowai" type-status="loading">
+          <div class="icons"><span class="material-symbols-outlined">api</span></div>
+          <div class="texts">
+            <h3>Check window.ai API</h3>
+            <div class="loading">Check status...</div>
+            <div class="success">Successfully register or include recommendations, which your browser supports</div>
+            <div class="failed">Sorry, try to check the problem again, try to turn on <a href="chrome://flags/#prompt-api-for-gemini-nano" target="_blank">chrome://flags/#prompt-api-for-gemini-nano to <b>Enable</b></a> and <a href="chrome://flags/#optimization-guide-on-device-model" target="_blank">chrome://flags/#optimization-guide-on-device-model to <b>Enabled BypassPrefRequirement</b></a>, or go to this article page</div>
+          </div>
+        </div>
+        <div class="payloaddown"><span class="material-symbols-outlined">keyboard_arrow_down</span></div>
+        <div class="listcontent" type-content="cancreatesession" type-status="loading">
+          <div class="icons"><span class="material-symbols-outlined">forum</span></div>
+          <div class="texts">
+            <h3>Can create the session?</h3>
+            <div class="loading">Check status...</div>
+            <div class="success">Successfully, you can create a session that has been assigned.</div>
+            <div class="failed">Your browser maybe supports the API in window.ai, but cannot load a session or create a prompt session, <a href="https://huggingface.co/blog/Xenova/run-gemini-nano-in-your-browser#:~:text=await%20ai.canCreateTextSession()" target="_blank">check this article</a></div>
+          </div>
+        </div>
+        <div class="payloaddown"><span class="material-symbols-outlined">keyboard_arrow_down</span></div>
+        <div class="listcontent" type-content="createthesession" type-status="loading">
+          <div class="icons"><span class="material-symbols-outlined">chat</span></div>
+          <div class="texts">
+            <h3>Create the session</h3>
+            <div class="loading">Check status...</div>
+            <div class="success">Successfully, you can create any word you want according to your prompt 🎉</div>
+            <div class="failed">Failed to create a session, try again and check again</div>
+          </div>
+        </div>
+        <div class="listbtn">
+          <button click-url="./index">Go Back Home</button>
+          <button style="display: none;" click-url="./chat">Open Chat</button>
+        </div>
+      </div>
+    </div>
+    <script src="./assets/app.js"></script>
+  </body>
+</html>
