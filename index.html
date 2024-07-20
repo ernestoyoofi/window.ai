@@ -4,21 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>window.ai - AI Generate local on your browser</title>
+    <meta name="description" content="Generate text by Gemini Nano, this is not from the server but from your own browser and can run offline without the problem of lost connections." />
     <link href="./assets/globals.css" rel="stylesheet" /> 
-    <link href="./assets/styles.css" rel="stylesheet" /> 
+    <link href="./assets/styles.css" rel="stylesheet" />
+    <script type="importmap">
+      {
+        "imports": {
+          "@material/web/": "https://esm.run/@material/web/",
+          "react-gist": "https://esm.run/react-gist"
+        }
+      }
+    </script>
+    <script type="module">
+      import '@material/web/all.js'
+      import "react-gist"
+      import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js'
+
+      document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    </script>
   </head>
   <body>
-    <div class="homesection">
-      <div class="homescreen">
-        <h3><mark>window.ai</mark> , AI Generate local on your browser</h3>
-        <p>Generate text by Gemini Nano, this is not from the server but from your own browser and can run offline without the problem of lost connections.</p>
-        <script src="https://gist.github.com/ernestoyoofi/36cae9106b816525d9759aa9c60c13e5.js"></script>
-        <div class="listbtn">
-          <button click-url="./statuscheck">Check Support</button>
-          <button click-url="./chat">Open Chat</button>
-        </div>
-      </div>
+    <div class="alert-container">
+      <div class="alert-manage"></div>
     </div>
-    <script src="./assets/app.js"></script>
+    <div id="app-page"></div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="http://unpkg.com/gist-embed/dist/gist-embed.min.js"></script>
+    <script type="text/jsx" src="./assets/Render.js"></script>
   </body>
 </html>

@@ -3,14 +3,35 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>window.ai - Start your chat 💬</title>
+    <title>window.ai - Start The Chat</title>
+    <meta name="description" content="Generate text by Gemini Nano, this is not from the server but from your own browser and can run offline without the problem of lost connections." />
     <link href="./assets/globals.css" rel="stylesheet" /> 
-    <link href="./assets/styles.css" rel="stylesheet" /> 
+    <link href="./assets/styles.css" rel="stylesheet" />
+    <script type="importmap">
+      {
+        "imports": {
+          "@material/web/": "https://esm.run/@material/web/",
+          "react-gist": "https://esm.run/react-gist"
+        }
+      }
+    </script>
+    <script type="module">
+      import '@material/web/all.js'
+      import "react-gist"
+      import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js'
+
+      document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    </script>
   </head>
   <body>
-    <div>
-      <center>This page has coming soon 👋</center>
+    <div class="alert-container">
+      <div class="alert-manage"></div>
     </div>
-    <script src="./assets/app.js"></script>
+    <div id="app-page"></div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="http://unpkg.com/gist-embed/dist/gist-embed.min.js"></script>
+    <script type="text/jsx" src="./assets/Render.js"></script>
   </body>
 </html>

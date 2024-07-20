@@ -1,8 +1,19 @@
-@import url(https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200);
+@import url("https://fonts.googleapis.com/css?family=Google+Sans:100,300,400,500,700,900,100i,300i,400i,500i,700i,900i");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..400,0..1,-50..200");
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@200;300;400;500;600&family=JetBrains+Mono:ital,wght@0,100;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&family=Quicksand:wght@300;400;500&family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&family=Rubik:wght@300&display=swap");
+@import url("https://fonts.cdnfonts.com/css/product-sans");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+
+:root {
+  --md-filled-tonal-button-label-text-font: system-ui;
+  --md-sys-color-secondary-container: #3F51B5;
+  --md-sys-color-on-secondary-container: #FFFFFF;
+  --md-sys-color-primary: black;
+}
 
 * {
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
+  font-family: "Google Sans",sans-serif;
   box-sizing: border-box;
 }
 body, html {
@@ -24,4 +35,34 @@ pre * {
 }
 .blob-code * {
   font-family: "JetBrains Mono", monospace;
+}
+
+.alert-container {
+  width: 100%;
+  height: 0px;
+  position: fixed;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+}
+.alert-container .alert-manage {
+  width: 100%;
+  max-width: 450px;
+}
+.alert-container .alert-manage .alert-content {
+  width: 100%;
+  margin: 9px;
+  background-color: #333333;
+  padding: 10px 18px;
+  border-radius: 6px;
+  color: #ffffff;
+  box-shadow: rgba(0,0,0,0.2) 0px 2px 8px;
+  animation: .5s AlertNewInserts;
+  transition: .3s;
+  transition-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+}
+@keyframes AlertNewInserts {
+  0%, 40% { margin-top: -60px; opacity: 0; scale: 0.6; }
+  100% { margin-top: 9px; opacity: 1; scale: 1; }
 }

@@ -1,3 +1,16 @@
+.errorview {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 24px;
+}
+.errorview .errorbox {
+  width: 100%;
+  max-width: 400px;
+}
 .homesection {
   width: 100%;
   height: 100vh;
@@ -17,12 +30,14 @@
   background: transparent;
   color: #ffffff;
   padding: 4px 12px;
+  font-size: 36px;
+  font-weight: bold;
 }
 .homescreen h3 mark::before {
   content: " ";
   position: absolute;
-  width: 120px;
-  height: 36px;
+  width: 200px;
+  height: 54px;
   background-color: #603dfe;
   transform: rotate(-4deg);
   z-index: -1;
@@ -32,24 +47,201 @@
 .homescreen .listbtn {
   display: flex;
   justify-content: center;
+  font-weight: bold;
 }
-.homescreen .listbtn button {
-  padding: 6px 16px;
-  background-color: #3d5afe;
-  border-radius: 4px;
-  border: none;
-  margin: 0px 3px;
-  color: #ffffff;
-  font-weight: 500;
-  box-shadow: rgba(0,0,0,0.4) 0px 2px 5px;
-  user-select: none;
-  cursor: pointer;
+.homescreen .listbtn md-filled-tonal-button {
+  font-weight: bold;
+  margin: 0px 4px;
 }
 .homescreen .gist-file {
   box-shadow: rgba(0,0,0,0.4) 0px 2px 5px;
   padding-top: 9px;
 }
-.pagestatus {
+.checkup {
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 16px;
+}
+.checkup .testprogress {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+}
+.checkup .testprogress .testresult {
+  width: 100%;
+  height: 100px;
+  display: flex;
+}
+.checkup .testprogress .testresult .icon {
+  width: 55px;
+  display: flex;
+  justify-content: center;
+}
+.checkup .testprogress .testresult .icon .circle {
+  width: 45px;
+  height: 45px;
+  border-radius: 45px;
+  border: 1px solid #bbbbbb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  font-size: 20px;
+}
+.checkup .testprogress .testresult .icon .circle::after {
+  content: " ";
+  position: absolute;
+  width: 2px;
+  height: calc(100px - 45px);
+  margin-top: calc(calc(100px - 45px) + 45px);
+  background-color: #bbbbbb;
+}
+.checkup .testprogress .testresult.lasttest .icon .circle::after {
+  display: none;
+}
+.checkup .testprogress .testresult .icon .circle .material-symbols-outlined {
+  display: none;
+  font-size: 27px;
+}
+.checkup .testprogress .testresult[status="finis"] .icon .circle .material-symbols-outlined {
+  display: inline-block;
+}
+.checkup .testprogress .testresult[status="finis"] .icon .circle {
+  background-color: #08fa00;
+  border-color: #07c700;
+  color: #ffffff;
+}
+.checkup .testprogress .testresult[status="finis"] .icon .circle::after {
+  background: #07c700;
+}
+.checkup .testprogress .testresult[status="finis"] .icon .circle b {
+  display: none;
+}
+.checkup .testprogress .testresult[status="finis"] .text h3 {
+  color: #07c700;
+}
+.checkup .testprogress .testresult[status="error"] .icon .circle {
+  background-color: #fa0000;
+  border-color: #d80000;
+  color: #ffffff;
+}
+.checkup .testprogress .testresult[status="error"] .icon .circle::after {
+  background: #d80000;
+}
+.checkup .testprogress .testresult[status="error"] .text h3 {
+  color: #d80000;
+}
+.checkup .testprogress .testresult .text {
+  width: calc(100% - 55px);
+  padding: 0px 6px;
+}
+.checkup .testprogress .testresult .text h3 {
+  margin-top: 10px;
+  margin-bottom: 11px;
+}
+.checkup .testprogress .testresult .text p {
+  margin: 0px;
+}
+.chatrespon {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+.chatrespon header {
+  width: 100%;
+  height: 65px;
+  position: sticky;
+  top: 0px; left: 0;
+  z-index: 4;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+.chatrespon header md-text-button {
+  width: 65px;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chatrespon .chatlist {
+  width: 100%;
+  margin-bottom: 140px;
+  padding: 0px 14px;
+}
+.chatrespon .chatlist .message-user, .chatrespon .chatlist .message-system {
+  margin-bottom: 9px;
+  animation-timing-function: ease-in-out;
+  animation: .5s AnimatedMessage;
+}
+@keyframes AnimatedMessage {
+  0%, 20% { margin-top: -10px; opacity: 0; }
+  100% { margin-top: 0px; opacity: 1; }
+}
+.chatrespon .chatlist .message-container {
+  margin: 0px 60px;
+  padding: 4px 10px;
+}
+.chatrespon .chatlist .message-container p {
+  text-align: end;
+  margin: 0px;
+  font-size: 13px;
+  margin-bottom: 6px;
+  padding: 0px 9px;
+  user-select: none;
+}
+.chatrespon .chatlist .message-text {
+  padding: 10px 14px;
+  background: #e9e9e9;
+  border-radius: 20px;
+}
+.chatrespon .chatlist .message-user {
+  display: flex;
+  justify-content: flex-end;
+}
+.chatrespon .chatlist .message-user .message-container {
+  margin-right: 0px;
+}
+.chatrespon .chatlist .message-system {
+  display: flex;
+  justify-content: flex-start;
+}
+.chatrespon .chatlist .message-system .message-container {
+  margin-left: 0px;
+}
+.chatrespon .chatlist .message-system .message-container p {
+  text-align: start;
+}
+.chatrespon .chatlist .message-system .message-text {
+  background: #e0daff;
+}
+.chatrespon .inputtext {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px;
+  background-color: #ffffff;
+}
+.chatrespon .inputtext .responses-text {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+.chatrespon .inputtext md-outlined-text-field {
+  width: calc(100% - 60px);
+  min-height: 55px;
+  max-height: 200px;
+  resize: vertical;
+}
+.chatrespon .inputtext md-text-button {
+  width: 60px;
+}
+/* .pagestatus {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -130,4 +322,4 @@
   box-shadow: rgba(0,0,0,0.4) 0px 2px 5px;
   user-select: none;
   cursor: pointer;
-}
+} */
